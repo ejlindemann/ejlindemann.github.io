@@ -1,0 +1,306 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Github, Linkedin, Mail, FileDown, BarChart3, Layers, LineChart, School, MapPin, Calendar } from "lucide-react";
+
+// Simple helper animation
+const fadeIn = {
+  hidden: { opacity: 0, y: 12 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+export default function Portfolio() {
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      {/* Navbar */}
+      <header className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-background/70 border-b">
+        <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+          <a href="#home" className="font-semibold text-xl">Ethan Lindemann</a>
+          <nav className="hidden md:flex gap-6 text-sm">
+            <a className="hover:opacity-80" href="#about">About</a>
+            <a className="hover:opacity-80" href="#projects">Projects</a>
+            <a className="hover:opacity-80" href="#skills">Skills</a>
+            <a className="hover:opacity-80" href="#experience">Experience</a>
+            <a className="hover:opacity-80" href="#contact">Contact</a>
+          </nav>
+          <div className="flex gap-2">
+            <Button asChild size="sm" variant="outline">
+              <a href="#resume"><FileDown className="mr-2 h-4 w-4"/>Resume</a>
+            </Button>
+            <Button asChild size="sm">
+              <a href="#contact">Say hi</a>
+            </Button>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section id="home" className="relative">
+        <div className="mx-auto max-w-6xl px-4 py-20 grid md:grid-cols-2 items-center gap-10">
+          <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ once: true }}>
+            <p className="text-sm uppercase tracking-widest opacity-70">Data Analytics Student • Oakland University</p>
+            <h1 className="mt-2 text-4xl md:text-5xl font-bold leading-tight">
+              Turning messy data into clear decisions.
+            </h1>
+            <p className="mt-4 text-muted-foreground">
+              I’m Ethan, a business analytics student focused on building dashboards, models, and
+              analyses that help organizations act with confidence.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button asChild>
+                <a href="#projects">See Projects</a>
+              </Button>
+              <Button asChild variant="outline">
+                <a href="https://www.linkedin.com/in/ethan-lind" target="_blank" rel="noreferrer">
+                  <Linkedin className="mr-2 h-4 w-4"/>LinkedIn
+                </a>
+              </Button>
+              <Button asChild variant="outline">
+                <a href="https://github.com/" target="_blank" rel="noreferrer">
+                  <Github className="mr-2 h-4 w-4"/>GitHub
+                </a>
+              </Button>
+            </div>
+          </motion.div>
+
+          <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ once: true }} className="md:justify-self-end">
+            <Card className="overflow-hidden shadow-xl rounded-2xl">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2"><BarChart3 className="h-5 w-5"/> Live Snapshot</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-3 gap-4 text-center">
+                  <div className="p-4 rounded-xl bg-muted">
+                    <div className="text-2xl font-bold">3.87</div>
+                    <div className="text-xs opacity-70">GPA</div>
+                  </div>
+                  <div className="p-4 rounded-xl bg-muted">
+                    <div className="text-2xl font-bold">+20 lbs</div>
+                    <div className="text-xs opacity-70">Muscle (2 yrs)</div>
+                  </div>
+                  <div className="p-4 rounded-xl bg-muted">
+                    <div className="text-2xl font-bold">OU</div>
+                    <div className="text-xs opacity-70">Honors & AIS</div>
+                  </div>
+                </div>
+                <div className="mt-4 text-sm text-muted-foreground">
+                  Passionate about applying analytics in finance, operations, and advisory contexts.
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section id="about" className="mx-auto max-w-6xl px-4 py-12">
+        <motion.div variants={fadeIn} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid md:grid-cols-3 gap-8">
+          <div className="md:col-span-2">
+            <h2 className="text-2xl font-semibold">About</h2>
+            <p className="mt-3 text-muted-foreground">
+              I study Management Information Systems with a Data Analytics focus at Oakland University (grad Apr 2027).
+              I’m especially interested in decision intelligence—where data, finance, and operations meet.
+            </p>
+            <div className="mt-4 flex flex-wrap gap-2">
+              <Badge>Power BI</Badge>
+              <Badge>Excel / VBA</Badge>
+              <Badge>SQL</Badge>
+              <Badge>Python</Badge>
+              <Badge>Tableau</Badge>
+              <Badge>Statistics</Badge>
+            </div>
+          </div>
+          <div className="space-y-2 text-sm text-muted-foreground">
+            <div className="flex items-center gap-2"><School className="h-4 w-4"/> Oakland University Honors College</div>
+            <div className="flex items-center gap-2"><Calendar className="h-4 w-4"/> Graduation: Apr 2027</div>
+            <div className="flex items-center gap-2"><MapPin className="h-4 w-4"/> Metro Detroit, MI</div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Projects */}
+      <section id="projects" className="bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-2xl font-semibold">Projects</h2>
+          <p className="mt-2 text-muted-foreground">A few things I’ve built and analyzed.</p>
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
+            {/* Project Card 1 */}
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2"><LineChart className="h-5 w-5"/> Revenue Dashboard</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  End-to-end Power BI dashboard with DAX measures for MoM/YoY trends; 
+                  automated refresh from SQL Server; written stakeholder summary memo.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <Badge variant="secondary">Power BI</Badge>
+                  <Badge variant="secondary">SQL</Badge>
+                  <Badge variant="secondary">DAX</Badge>
+                </div>
+                <div className="mt-4">
+                  <Button asChild variant="outline" size="sm"><a href="#">View case study</a></Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Project Card 2 */}
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2"><Layers className="h-5 w-5"/> Churn Classifier</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Binary classification model to predict client churn; feature engineering & class imbalance handling; 
+                  model interpretability with SHAP-style insights.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <Badge variant="secondary">Python</Badge>
+                  <Badge variant="secondary">scikit-learn</Badge>
+                  <Badge variant="secondary">Pandas</Badge>
+                </div>
+                <div className="mt-4">
+                  <Button asChild variant="outline" size="sm"><a href="#">GitHub repo</a></Button>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Project Card 3 */}
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2"><BarChart3 className="h-5 w-5"/> Valuation Scenario Tool</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Excel + Python tool to model valuation scenarios (DCF & comparables) with sensitivity analysis; 
+                  produced client-ready charts and write-up.
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <Badge variant="secondary">Excel</Badge>
+                  <Badge variant="secondary">Python</Badge>
+                  <Badge variant="secondary">Finance</Badge>
+                </div>
+                <div className="mt-4">
+                  <Button asChild variant="outline" size="sm"><a href="#">Download</a></Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills */}
+      <section id="skills" className="mx-auto max-w-6xl px-4 py-12">
+        <h2 className="text-2xl font-semibold">Skills</h2>
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          <Card className="rounded-2xl">
+            <CardHeader><CardTitle>Analytics</CardTitle></CardHeader>
+            <CardContent className="text-sm text-muted-foreground space-y-2">
+              <p>Exploratory data analysis, feature engineering, model evaluation, A/B testing.</p>
+              <p>Visualization in Power BI/Tableau; stakeholder storytelling.</p>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl">
+            <CardHeader><CardTitle>Tech</CardTitle></CardHeader>
+            <CardContent className="text-sm text-muted-foreground space-y-2">
+              <p>Python, SQL, Excel/VBA, Git, Jupyter.</p>
+              <p>Basics: HTML/CSS/JS, React.</p>
+            </CardContent>
+          </Card>
+          <Card className="rounded-2xl">
+            <CardHeader><CardTitle>Business</CardTitle></CardHeader>
+            <CardContent className="text-sm text-muted-foreground space-y-2">
+              <p>Financial analysis, operations, requirements gathering.</p>
+              <p>Clear writing, presentations, team collaboration.</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Experience */}
+      <section id="experience" className="bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-2xl font-semibold">Experience</h2>
+          <div className="mt-6 grid md:grid-cols-2 gap-6">
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle>Student Projects & Case Competitions</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-2">
+                <p>Teamed on data cleaning, dashboard builds, and finance cases; presented to judges and classmates.</p>
+                <p>Focus on actionable insights, not just charts.</p>
+              </CardContent>
+            </Card>
+            <Card className="rounded-2xl">
+              <CardHeader>
+                <CardTitle>Leadership & Involvement</CardTitle>
+              </CardHeader>
+              <CardContent className="text-sm text-muted-foreground space-y-2">
+                <p>Association for Information Systems member; Honors College activities.</p>
+                <p>Organized study groups, shared analytics resources with peers.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Resume anchor */}
+      <section id="resume" className="mx-auto max-w-6xl px-4 py-12">
+        <Card className="rounded-2xl">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2"><FileDown className="h-5 w-5"/> Resume</CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm text-muted-foreground">
+            <p>Drop a PDF link to your resume here. For now this button is a placeholder:</p>
+            <div className="mt-4">
+              <Button asChild><a href="#">Download Resume (PDF)</a></Button>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* Contact */}
+      <section id="contact" className="bg-muted/30">
+        <div className="mx-auto max-w-6xl px-4 py-14">
+          <h2 className="text-2xl font-semibold">Contact</h2>
+          <p className="mt-2 text-muted-foreground">Open to internships, projects, and collaborations.</p>
+          <div className="mt-6 grid md:grid-cols-2 gap-6">
+            <Card className="rounded-2xl">
+              <CardHeader><CardTitle>Send a message</CardTitle></CardHeader>
+              <CardContent>
+                <form className="space-y-3">
+                  <Input placeholder="Your name"/>
+                  <Input placeholder="Email" type="email"/>
+                  <Textarea placeholder="Message" rows={5}/>
+                  <Button type="button">Submit</Button>
+                  <p className="text-xs text-muted-foreground">This is a front-end demo; connect to a backend/email service to make it work.</p>
+                </form>
+              </CardContent>
+            </Card>
+            <Card className="rounded-2xl">
+              <CardHeader><CardTitle>Elsewhere</CardTitle></CardHeader>
+              <CardContent className="space-y-3">
+                <a className="flex items-center gap-2 hover:opacity-80" href="mailto:ejlindemann04@gmail.com"><Mail className="h-4 w-4"/> ejlindemann04@gmail.com</a>
+                <a className="flex items-center gap-2 hover:opacity-80" href="https://www.linkedin.com/in/ethan-lind" target="_blank" rel="noreferrer"><Linkedin className="h-4 w-4"/> linkedin.com/in/ethan-lind</a>
+                <a className="flex items-center gap-2 hover:opacity-80" href="https://github.com/" target="_blank" rel="noreferrer"><Github className="h-4 w-4"/> github.com</a>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t">
+        <div className="mx-auto max-w-6xl px-4 py-8 text-sm text-muted-foreground flex items-center justify-between">
+          <span>© {new Date().getFullYear()} Ethan Lindemann</span>
+          <span>Built with React + Tailwind</span>
+        </div>
+      </footer>
+    </div>
+  );
+}
