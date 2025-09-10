@@ -7,7 +7,6 @@
   <meta name="description" content="Data Analytics student at Oakland University — dashboards, models, and clear decisions." />
   <meta name="color-scheme" content="light dark">
   <style>
-    /* ====== THEME (tweak these) ====== */
     :root{
       --bgA:#12023a; --bgB:#1c0f7a; --glow1:#ff6a00; --glow2:#ffe600; --glow3:#00e5ff;
       --card:#ffffff; --text:#0f1225; --muted:#6b7390; --border:rgba(255,255,255,.14);
@@ -16,8 +15,6 @@
     @media (prefers-color-scheme: dark){
       :root{ --card:#0d1230; --text:#eaf0ff; --muted:#a6b1cc }
     }
-
-    /* ====== Base ====== */
     *{box-sizing:border-box} html,body{height:100%}
     body{
       margin:0; font-family: system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;
@@ -30,13 +27,8 @@
       background-attachment: fixed;
       animation: drift 18s ease-in-out infinite alternate;
     }
-    @keyframes drift{
-      0%{background-position:0 0,0 0,0 0,0 0}
-      100%{background-position:40px 10px,-30px 20px,20px -30px,0 0}
-    }
+    @keyframes drift{0%{background-position:0 0,0 0,0 0,0 0}100%{background-position:40px 10px,-30px 20px,20px -30px,0 0}}
     .wrap{max-width:1000px;margin:0 auto;padding:28px}
-
-    /* ====== Nav ====== */
     header{position:sticky;top:0;z-index:20;background:rgba(10,12,26,.35);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
     nav{display:flex;gap:16px;align-items:center;justify-content:space-between}
     .brand{color:#fff;font-weight:700;letter-spacing:.2px}
@@ -44,23 +36,17 @@
     .btn{display:inline-block;padding:10px 14px;border-radius:12px;background:#fff;color:#111;font-weight:600;text-decoration:none;border:2px solid rgba(0,0,0,.06);box-shadow:var(--shadow)}
     .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.55)}
     .btn:hover{transform:translateY(-1px)}
-
-    /* ====== Sections & Cards ====== */
     section{margin:26px 0}
     .card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:18px;box-shadow:var(--shadow)}
     .grid{display:grid;gap:16px}
     .grid-2{grid-template-columns:1fr}
     .grid-3{grid-template-columns:1fr}
     @media(min-width:900px){.grid-2{grid-template-columns:1fr 1fr}.grid-3{grid-template-columns:repeat(3,1fr)}}
-
-    /* ====== Hero ====== */
     .hero{display:grid;gap:20px;grid-template-columns:1fr;padding:46px 0}
     @media(min-width:900px){.hero{grid-template-columns:1.1fr .9fr;align-items:center}}
     h1{font-size:clamp(28px,6vw,48px);line-height:1.1;margin:.2em 0;color:#fff}
     .tagline{color:#e8f2ff;opacity:.92;font-size:18px}
     .pill{display:inline-block;padding:6px 10px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff;font-size:12px;letter-spacing:.3px}
-
-    /* ====== Accents ====== */
     .tag{display:inline-block;background:linear-gradient(90deg,var(--glow3),var(--glow1));color:#000;font-weight:700;border-radius:999px;padding:6px 10px;margin:3px;font-size:12px}
     h2{color:#fff;margin:8px 0 10px}
     .muted{color:var(--muted)}
@@ -68,7 +54,6 @@
   </style>
 </head>
 <body>
-  <!-- ====== NAV ====== -->
   <header>
     <div class="wrap">
       <nav aria-label="Primary">
@@ -83,7 +68,6 @@
   </header>
 
   <main class="wrap">
-    <!-- ====== HERO ====== -->
     <section class="hero" id="top">
       <div>
         <span class="pill">Data Analytics • Oakland University</span>
@@ -110,7 +94,6 @@
       </div>
     </section>
 
-    <!-- ====== PROJECTS ====== -->
     <section id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title">Projects</h2>
       <div class="grid grid-3">
@@ -132,7 +115,6 @@
       </div>
     </section>
 
-    <!-- ====== SKILLS ====== -->
     <section id="skills" aria-labelledby="skills-title">
       <h2 id="skills-title">Skills</h2>
       <div class="grid grid-2">
@@ -147,7 +129,6 @@
       </div>
     </section>
 
-    <!-- ====== CONTACT ====== -->
     <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
       <div class="card">
